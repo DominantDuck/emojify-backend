@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html data-bs-theme="black" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>emojify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+</head>
+
+<body>
+    <button class="btn btn-primary" type="button" style="width: 425px;height: 550px;margin: 10px;position: relative;display: flex;margin-left: 24px;margin-top: 34px;">user-camera goes here</button>
+
+    <form id="entry-form" action="/journal" method="post">
+        <input type="text" id="user-entry" style="margin: 10px;width: 550px;height: 200px;position: relative;display: flex;padding-top: 0px;padding-bottom: 0px;padding-left: 28px;--bs-body-font-weight: 600;font-size: 40px;border-width: 2px;margin-right: -276px;margin-left: 480px;margin-bottom: 414px;margin-top: -582px;" placeholder="Diary Entry Here" name="user-entry">
+    </form>
+
+    <div class="container" style="width: 760px;margin-bottom: 4px;margin-top: -398px;/*background: var(--bs-secondary-color);*/padding-left: 0px;padding-bottom: 0px;padding-top: 0px;position: relative;display: flex;margin-left: 473px;height: 400px;padding-right: 0px;"><button class="btn btn-primary" id="display1" type="button" style="width: 175px;height: 175px;margin: 10px;">display1</button>
+        <button class="btn btn-primary" id="display2" type="button" style="width: 175px;height: 175px;margin: 10px;">display2</button>
+        <button class="btn btn-primary" id="display3" type="button" style="width: 175px;height: 175px;margin: 10px;">display3</button>
+        <button class="btn btn-primary" id="display4" type="button" style="width: 175px;height: 175px;margin: 10px;">display4</button>
+        <button class="btn btn-primary" id="display5" type="button" style="width: 175px;height: 175px;margin: 10px;position: static;margin-left: -770px;margin-bottom: 12px;margin-top: 210px;">display5</button>
+        <button class="btn btn-primary" id="display6" type="button" style="width: 175px;height: 175px;margin: 10px;position: static;margin-bottom: 12px;margin-top: 210px;margin-left: 10px;">display6</button>
+        <button class="btn btn-primary" id="display7" type="button" style="width: 175px;height: 175px;margin: 10px;position: static;margin-bottom: 12px;margin-top: 210px;margin-left: 10px;">display7</button>
+        <button class="btn btn-primary" id="display8" type="button" style="width: 175px;height: 175px;margin: 10px;position: static;margin-bottom: 12px;margin-top: 210px;margin-left: 10px;margin-right: -10px;">display8</button>
+    </div>
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>
