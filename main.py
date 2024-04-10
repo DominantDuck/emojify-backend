@@ -2,12 +2,14 @@ from flask import Flask, render_template, request, redirect, url_for
 from journal import journal
 import detect
 from storage import storage_main
+from storage import storage_icon
 
 app = Flask(__name__)
 
-emojis = []
+journal_emojis = []
 entry = ""
 button_images = {}
+button_info = {}
 
 @app.route('/')
 def index():
@@ -20,6 +22,7 @@ def journal_space():
 
     journal_entry = request.form['user-entry']
     print(journal_entry)
+
 
     entry = journal_entry #this is for storage purposes
 
@@ -35,18 +38,28 @@ def snapshot():
     image_data_url = request.json.get('image_data_url') #David, write html code that that takes a screenshot of the video feed area
     if image_data_url:
         newest_button_dropdown = storage_main.create_summary(image_data_url, entry)
-        move_images_down(newest_button_dropdown)
-    #newest button needs to be sent to the html file and assinged to the newest button (1st button)
+        newest_button_icon = storage_icon.create_icon(journal_emojis, detect.getEmotion())
+        move_info_down(newest_button_dropdown)
+        move_img_down(newest_button_icon)
+    
 
 
-def move_images_down(newest_button_dropdown): 
+def move_info_down(newest_button_dropdown): 
+    global button_info
+    for i in range(len(button_info), 0, -1):
+        if i == 1:
+            button_info[i] = newest_button_dropdown
+        else:
+            button_info[i] = button_info[i - 1]
+
+            
+def move_img_down(newest_button_dropdown): 
     global button_images
     for i in range(len(button_images), 0, -1):
         if i == 1:
             button_images[i] = newest_button_dropdown
         else:
             button_images[i] = button_images[i - 1]
-    
 
 #for loop: 1st button = 1st img, etc.
     
