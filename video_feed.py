@@ -89,6 +89,8 @@ def main():
     mp_face_detection = mp.solutions.face_detection
     face_detection = mp_face_detection.FaceDetection()
     cap = cv2.VideoCapture(0)
+
+    emotion = None
     while True:
         ret, frame = cap.read()
         if not ret:
@@ -127,7 +129,8 @@ def main():
             frame = place_image_on_corner(frame.copy(), corner_path, corner_positions[i])
 
                 # cv2.rectangle(frame, bbox, (0, 255, 0), 2)
-        cv2.imshow('Face Emotion Detection', frame)
+        #maybe fix this later
+        return emotion, frame
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     cap.release()

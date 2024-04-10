@@ -31,3 +31,36 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("userEntry", this.value);
     });
 });
+
+document.getElementById('stream-button').addEventListener('click', function() {
+    var videoContainer = document.getElementById('video-container');
+    if (videoContainer.style.display === 'none') {
+        var video = document.createElement('video');
+        video.src = '{{ feed }}';
+        video.controls = false;
+        video.autoplay = true;
+        video.style.width = '100%';
+        video.style.height = '100%';
+        video.style.objectFit = 'cover';
+        videoContainer.appendChild(video);
+        videoContainer.style.display = 'block';
+    } else {
+        videoContainer.innerHTML = '';
+        videoContainer.style.display = 'none';
+    }
+});
+function sendSnapshot(imageDataUrl) {
+    fetch('/snapshot', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            image_data_url: imageDataUrl
+        })
+    }).then(response => {
+        // David: take a screenshot and send it to the server
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}

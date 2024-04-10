@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from journal import journal
 import detect
+import video_feed
 from storage import storage_main
 from storage import storage_icon
 
@@ -13,6 +14,8 @@ button_info = {}
 
 @app.route('/')
 def index():
+    global latest_emotion
+    latest_emotion, feed = video_feed.main()
     return render_template('index.html')
 
 @app.route('/journal', methods=['POST']) #Should activate when user hits "enter"
@@ -38,7 +41,7 @@ def snapshot():
     image_data_url = request.json.get('image_data_url') #David, write html code that that takes a screenshot of the video feed area
     if image_data_url:
         newest_button_dropdown = storage_main.create_summary(image_data_url, entry)
-        newest_button_icon = storage_icon.create_icon(journal_emojis, detect.getEmotion())
+        newest_button_icon = storage_icon.create_icon(journal_emojis, latest_emotion)
         move_info_down(newest_button_dropdown)
         move_img_down(newest_button_icon)
     
