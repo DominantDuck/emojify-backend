@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from journal import journal
 import detect
-import video_feed
+# import video_feed
 from storage import storage_main
 from storage import storage_icon
 
@@ -15,7 +15,7 @@ button_info = {}
 @app.route('/')
 def index():
     global latest_emotion
-    latest_emotion, feed = video_feed.main()
+    # latest_emotion, feed = video_feed.main()
     return render_template('index.html')
 
 @app.route('/journal', methods=['POST']) #Should activate when user hits "enter"

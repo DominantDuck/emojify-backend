@@ -17,79 +17,61 @@
         <textarea type="text" id="user-entry" style="margin: 10px;width: 550px;height: 200px;position: relative;display: flex;padding-top: 0px;padding-bottom: 0px;padding-left: 28px;--bs-body-font-weight: 600;font-size: 40px;border-width: 2px;margin-right: -276px;margin-left: 480px;margin-bottom: 414px;margin-top: -582px;" placeholder="Diary Entry Here" name="user-entry" oninput="fitText(this)" value="{{ entry }}"></textarea>
     </form>
 
-    <div class="container" style="width: 760px;margin-bottom: 4px;margin-top: -398px;/*background: var(--bs-secondary-color);*/padding-left: 0px;padding-bottom: 0px;padding-top: 0px;position: relative;display: flex;margin-left: 473px;height: 400px;padding-right: 0px;"><button class="btn btn-primary" id="display1" type="button" style="width: 175px;height: 175px;margin: 10px;">display1</button>
-        <button class="btn btn-primary dropdown" type="button" style="width: 175px;height: 175px;margin: 10px;" id="display1" data-bs-toggle="dropdown" aria-expanded="false">
-            display1
-            <ul class="dropdown-menu">
-                {% for image in button_images %}
-                <li><a class="dropdown-item" href="#"><img src="{{ image[0] }}" alt=""></a></li>
-                {% endfor %}
-            </ul>
-        </button>
-        
-        <button class="btn btn-primary dropdown" type="button" style="width: 175px;height: 175px;margin: 10px;" id="display2" data-bs-toggle="dropdown" aria-expanded="false">
-            display2
-            <ul class="dropdown-menu">
-                {% for image in button_images %}
-                <li><a class="dropdown-item" href="#"><img src="{{ image[1] }}" alt=""></a></li>
-                {% endfor %}
-            </ul>
-        </button>
-        
-        <button class="btn btn-primary dropdown" type="button" style="width: 175px;height: 175px;margin: 10px;" id="display3" data-bs-toggle="dropdown" aria-expanded="false">
-            display3
-            <ul class="dropdown-menu">
-                {% for image in button_images %}
-                <li><a class="dropdown-item" href="#"><img src="{{ image[2] }}" alt=""></a></li>
-                {% endfor %}
-            </ul>
-        </button>
-        
-        <button class="btn btn-primary dropdown" type="button" style="width: 175px;height: 175px;margin: 10px;" id="display4" data-bs-toggle="dropdown" aria-expanded="false">
-            display4
-            <ul class="dropdown-menu">
-                {% for image in button_images %}
-                <li><a class="dropdown-item" href="#"><img src="{{ image[3] }}" alt=""></a></li>
-                {% endfor %}
-            </ul>
-        </button>
-        
-        <button class="btn btn-primary dropdown" type="button" style="width: 175px;height: 175px;margin: 10px;position: relative;left: -770px;top: 210px;" id="display5" data-bs-toggle="dropdown" aria-expanded="false">
-            display5
-            <ul class="dropdown-menu">
-                {% for image in button_images %}
-                <li><a class="dropdown-item" href="#"><img src="{{ image[4] }}" alt=""></a></li>
-                {% endfor %}
-            </ul>
-        </button>
-        
-        <button class="btn btn-primary dropdown" type="button" style="width: 175px;height: 175px;margin: 10px;position: relative;top: 210px;" id="display6" data-bs-toggle="dropdown" aria-expanded="false">
-            display6
-            <ul class="dropdown-menu">
-                {% for image in button_images %}
-                <li><a class="dropdown-item" href="#"><img src="{{ image[5] }}" alt=""></a></li>
-                {% endfor %}
-            </ul>
-        </button>
-        
-        <button class="btn btn-primary dropdown" type="button" style="width: 175px;height: 175px;margin: 10px;position: relative;top: 210px;left: 10px;" id="display7" data-bs-toggle="dropdown" aria-expanded="false">
-            display7
-            <ul class="dropdown-menu">
-                {% for image in button_images %}
-                <li><a class="dropdown-item" href="#"><img src="{{ image[6] }}" alt=""></a></li>
-                {% endfor %}
-            </ul>
-        </button>
-        
-        <button class="btn btn-primary dropdown" type="button" style="width: 175px;height: 175px;margin: 10px;position: relative;top: 210px;left: 20px;" id="display8" data-bs-toggle="dropdown" aria-expanded="false">
-            display8
-            <ul class="dropdown-menu">
-                {% for image in button_images %}
-                <li><a class="dropdown-item" href="#"><img src="{{ image[7] }}" alt=""></a></li>
-                {% endfor %}
-            </ul>
-        </button>
-    </div>
+    <div class="container" style="width: 760px; margin: -398px auto 4px auto; display: flex; flex-wrap: wrap; justify-content: center; margin-left: 450px;">
+    <button class="btn btn-primary dropdown" type="button" style="width: 175px; height: 175px; margin: 10px;" id="display1" data-bs-toggle="dropdown" aria-expanded="false">
+        display1
+        <ul class="dropdown-menu">
+            {% for image in button_images %}
+            <li><a class="dropdown-item" href="#"><img src="{{ test_img.png }}" alt=""></a></li>
+            {% endfor %}
+        </ul>
+    </button>
+
+    <button class="btn btn-primary dropdown" type="button" style="width: 175px; height: 175px; margin: 10px;" id="display2" data-bs-toggle="dropdown" aria-expanded="false">
+        display2
+        <ul class="dropdown-menu">
+            {% for image in button_images %}
+            <li><a class="dropdown-item" href="#"><img src="{{ image[1] }}" alt=""></a></li>
+            {% endfor %}
+        </ul>
+    </button>
+
+    <button class="btn btn-primary dropdown" type="button" style="width: 175px; height: 175px; margin: 10px;" id="display3" data-bs-toggle="dropdown" aria-expanded="false">
+        display3
+        <ul class="dropdown-menu">
+            {% for image in button_images %}
+            <li><a class="dropdown-item" href="#"><img src="{{ image[2] }}" alt=""></a></li>
+            {% endfor %}
+        </ul>
+    </button>
+
+    <button class="btn btn-primary dropdown" type="button" style="width: 175px; height: 175px; margin: 10px;" id="display4" data-bs-toggle="dropdown" aria-expanded="false">
+        display4
+        <ul class="dropdown-menu">
+            {% for image in button_images %}
+            <li><a class="dropdown-item" href="#"><img src="{{ image[3] }}" alt=""></a></li>
+            {% endfor %}
+        </ul>
+    </button>
+
+    <button class="btn btn-primary dropdown" type="button" style="width: 175px; height: 175px; margin: 10px;" id="display5" data-bs-toggle="dropdown" aria-expanded="false">
+        display5
+        <ul class="dropdown-menu">
+            {% for image in button_images %}
+            <li><a class="dropdown-item" href="#"><img src="{{ image[4] }}" alt=""></a></li>
+            {% endfor %}
+        </ul>
+    </button>
+
+    <button class="btn btn-primary dropdown" type="button" style="width: 175px; height: 175px; margin: 10px;" id="display6" data-bs-toggle="dropdown" aria-expanded="false">
+        display6
+        <ul class="dropdown-menu">
+            {% for image in button_images %}
+            <li><a class="dropdown-item" href="#"><img src="{{ image[5] }}" alt=""></a></li>
+            {% endfor %}
+        </ul>
+    </button>
+</div>
     <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/bootstrap/js/bootstrap.min.js') }}"></script>
